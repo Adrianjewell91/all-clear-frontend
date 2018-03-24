@@ -126,20 +126,20 @@ var App = function (_React$Component) {
     value: function getData() {
       // return await (await fetch(someURL)).json() 
       return {
-        "102": { people: 10, injured: 0 },
-        "103": { people: 20, injured: 10 },
-        "courtyard": { people: 11, injured: 2 },
-        "912": { people: 40, injured: 1 }
+        "mainRoom": { people: 10, injured: 0 },
+        "middleRom": { people: 20, injured: 10 },
+        "office": { people: 11, injured: 2 },
+        "outreach": { people: 40, injured: 1 }
       };
     }
   }, {
     key: 'render',
     value: function render() {
       var roomMapping = {
-        "102": [75, 70],
-        "103": [50, 50],
-        "courtyard": [10, 10],
-        "912": [30, 30]
+        "mainRoom": [75, 70],
+        "middleRom": [44, 39],
+        "office": [82, 47],
+        "outreach": [51, 12]
       };
 
       var data = this.getData();
