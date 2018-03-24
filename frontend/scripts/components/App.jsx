@@ -34,9 +34,9 @@ class App extends React.Component {
   render() {
     const roomMapping = {
       "102": [75,70],
-      // "103":[150,100],
-      // "courtyard":[400,400],
-      // "912": [900,900]
+      "103":[50,50],
+      "courtyard":[10,10],
+      "912": [30,30]
     }
 
     const data = this.getData()

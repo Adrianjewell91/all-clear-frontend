@@ -136,10 +136,10 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
       var roomMapping = {
-        "102": [75, 70]
-        // "103":[150,100],
-        // "courtyard":[400,400],
-        // "912": [900,900]
+        "102": [75, 70],
+        "103": [50, 50],
+        "courtyard": [10, 10],
+        "912": [30, 30]
       };
 
       var data = this.getData();
@@ -202,13 +202,14 @@ var NodeElement = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (NodeElement.__proto__ || Object.getPrototypeOf(NodeElement)).call(this, props));
 
-    _this.state = { open: false };
+    _this.state = { open: false, visibility: "hidden" };
     return _this;
   }
 
   _createClass(NodeElement, [{
     key: "reveal",
     value: function reveal(e) {
+      var setVisible = this.state.visibility === "hidden" ? "visible" : "hidden";
       this.setState({ open: !this.state.open });
     }
   }, {
@@ -216,7 +217,6 @@ var NodeElement = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      // debugger
       var color = this.props.data.injured === 0 ? "#68fe36" : "red";
 
       return _react2.default.createElement(
@@ -231,17 +231,18 @@ var NodeElement = function (_React$Component) {
             onMouseLeave: function onMouseLeave(e) {
               return _this2.reveal(e);
             },
-            cx: "25", cy: "25", r: "20", stroke: "black", strokeWidth: "3", fill: color }),
-          "Sorry, your browser does not support inline SVG."
+            cx: "25", cy: "25", r: "20", stroke: "black", strokeWidth: "3", fill: color })
         ),
         _react2.default.createElement(
           "dialog",
-          { open: this.state.open },
+          { open: this.state.open, style: { top: this.props.top + "%", left: this.props.left + "%" } },
           Object.keys(this.props.data).map(function (key) {
             return _react2.default.createElement(
-              "span",
+              "p",
               null,
-              "key"
+              key.charAt(0).toUpperCase() + key.slice(1),
+              ": ",
+              _this2.props.data[key]
             );
           })
         )
