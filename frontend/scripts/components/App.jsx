@@ -10,8 +10,11 @@ import {
 const App = () => (
     <div>
         <header>
-          Welcome to the Node-React skeleton.
+          All Clear - School ID #12345 COVO Middle School
         </header>
+        <main>
+          <img src="http://res.cloudinary.com/deahfhfxu/image/upload/v1521915374/blueprint.png"/>
+        </main>
     </div>
 );
 

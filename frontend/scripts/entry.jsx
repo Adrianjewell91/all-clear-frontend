@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   // if (window.currentUser) {
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //   store = configureStore(preloadedState);
   //   delete window.currentUser;
   // } else {
-    store = configureStore();
+  store = configureStore();
   // }
 
   window.store = store;
